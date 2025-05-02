@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-box {
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.sign-in {
+    width: 100%;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.forgot {
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: none;
+}
+.logo-text {
+    font-size: 32px;
+    color: #d40000;      /* Sabre red */
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
