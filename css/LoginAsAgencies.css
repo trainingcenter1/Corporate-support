@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  background: white;
+  text-align: center;
+}
+
+.logo {
+  height: 45px;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+form input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .eye-icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 1rem;
+  background-color: #f8f8f8;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 1rem;
+}
